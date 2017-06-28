@@ -1,0 +1,20 @@
+nar|This is a demonstration of the capabilities of my iOs Visual Novel engine.
+nar|This software is unfinished but the following functions work:
+nar|Dialog, Character entrances/exits, background change, set variable, test variable, add/subtract (for number variables), test variable (for condition, followed by instruction to execute if condition is true), jump (exits current script file and jumps to another)
+nar|At present, the program reads and executes one instruction from a given script file every time the screen is tapped/clicked, including logic instructions that do not draw anything to the screen.  These instructions will log a message to the console to clarify what is happening.
+nar|In future versions background logic instructions (and some drawing instructions) will execute and then execute additional instructions automatically until the next piece of dialog occurs.  This function is not yet implemented.
+nar|Demo will now begin.
+nar|Change screen background.
+background|street.png|fade
+nar|Enter character.
+enter|Ui|main.png|{200,150}|{94.8,400.0}|fade
+Ui|Hello, I am a blatantly plagiarized character and this is some dialog.
+Ui|I will leave now.
+exit|Ui|fade
+nar|Testing variables.
+setVar|Ui|powerLevel|9000
+testVar|Ui|powerLevel|9001|jump|Demo1
+nar|If you are reading this text we are still in the original Demo script.
+add|Ui|powerLevel|1
+testVar|Ui|powerLevel|9001|jump|Demo1
+nar|If you are still reading this then the thing did not work correctly.
